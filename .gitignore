@@ -1,0 +1,15 @@
+# dados e saídas grandes (baixados/gerados)
+dados/
+datasets/
+runs/
+saida/
+*.zip
+.venv/
+__pycache__/
+*.pyc
+.env
+# pesos: versionamos só o best.pt (~5 MB) e o ONNX da web
+modelos/*
+!modelos/best.pt
+docs/resultados/val_teste/
+.pytest_cache/
