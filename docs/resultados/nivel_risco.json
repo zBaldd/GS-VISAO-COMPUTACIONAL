@@ -1,0 +1,45 @@
+{
+  "imagens": 50,
+  "acuracia_nivel": 0.64,
+  "acuracia_nivel_tolerancia_1": 0.84,
+  "alerta_recall": 0.8108,
+  "alerta_precisao": 0.8824,
+  "niveis": [
+    "SEM ALAGAMENTO",
+    "ATENCAO",
+    "ALTO",
+    "CRITICO"
+  ],
+  "matriz_real_x_previsto": [
+    [
+      5,
+      0,
+      3,
+      0
+    ],
+    [
+      4,
+      0,
+      1,
+      0
+    ],
+    [
+      5,
+      2,
+      26,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ]
+  ],
+  "distribuicao_real": {
+    "SEM ALAGAMENTO": 8,
+    "ATENCAO": 5,
+    "ALTO": 35,
+    "CRITICO": 2
+  }
+}

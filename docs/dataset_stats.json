@@ -1,0 +1,57 @@
+{
+  "classes": [
+    "area_alagada",
+    "veiculo_ilhado",
+    "pessoa_na_agua"
+  ],
+  "origem_das_classes": {
+    "area_alagada": [
+      "flood-detection-aicourse:flooded_road",
+      "flood-nfc4z:flood",
+      "flooding-object-detection-opiei:flooded_area"
+    ],
+    "veiculo_ilhado": [
+      "flood-detection-aicourse:flooded_car",
+      "flooding-object-detection-opiei:flooded_car"
+    ],
+    "pessoa_na_agua": [
+      "flooding-object-detection-opiei:flooded_person"
+    ]
+  },
+  "classes_descartadas": [
+    "flood-detection-aicourse:flooded_electric_distribution_pole",
+    "flood-detection-aicourse:flooded_fallen_trees",
+    "flood-detection-aicourse:flooded_house",
+    "flooding-object-detection-opiei:flooded_building"
+  ],
+  "duplicadas_removidas": 1,
+  "splits": {
+    "train": {
+      "imagens": 1254,
+      "imagens_sem_rotulo": 52,
+      "instancias": {
+        "area_alagada": 1244,
+        "veiculo_ilhado": 1086,
+        "pessoa_na_agua": 330
+      }
+    },
+    "valid": {
+      "imagens": 139,
+      "imagens_sem_rotulo": 9,
+      "instancias": {
+        "area_alagada": 127,
+        "veiculo_ilhado": 56,
+        "pessoa_na_agua": 12
+      }
+    },
+    "test": {
+      "imagens": 50,
+      "imagens_sem_rotulo": 8,
+      "instancias": {
+        "area_alagada": 42,
+        "veiculo_ilhado": 5,
+        "pessoa_na_agua": 3
+      }
+    }
+  }
+}
