@@ -16,9 +16,7 @@ async function carregarModelo() {
     ort.env.wasm.wasmPaths = "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.31.1/dist/";
     meta = await (await fetch("model/meta.json", { cache: "no-cache" })).json();
     sessao = await ort.InferenceSession.create("model/alagamento.onnx", { executionProviders: ["wasm"] });
-    const m = meta.metricas_teste;
-    $("info-modelo").textContent = `${meta.origem} · ${meta.imgsz}px · ${meta.classes.length} classes` +
-      (m ? ` · mAP50 no teste ${(m.mAP50 * 100).toFixed(1)}%` : "");
+    $("info-modelo").textContent = `YOLO26n · ${meta.imgsz}px · ${meta.classes.length} classes`;
     status("Modelo pronto. Envie uma foto ou ligue a câmera.");
   } catch (e) {
     console.error(e);
