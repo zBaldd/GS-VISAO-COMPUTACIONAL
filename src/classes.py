@@ -34,6 +34,7 @@ SINONIMOS = {
     "drown car": "veiculo_ilhado",
     "drowning car": "veiculo_ilhado",
     "car_in_water": "veiculo_ilhado",
+    "floodingcars": "veiculo_ilhado",
     "tier_merged_car": "veiculo_ilhado",
     "flooded_vehicle": "veiculo_ilhado",
     "veiculo_ilhado": "veiculo_ilhado",
