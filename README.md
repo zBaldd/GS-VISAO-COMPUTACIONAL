@@ -5,7 +5,7 @@ Professores: Arnaldo Viana e Paulo Rodrigues
 
 Um detector YOLO, treinado pela equipe, que reconhece **rua alagada**, **veículo ilhado** e **pessoa na água** em fotos e em vídeo ao vivo. Cada detecção vira um **nível de risco** (Sem alagamento, Atenção, Alto, Crítico) que alimenta os relatos de alagamento do MVP Alerta Chuva SP.
 
-- **Demonstração online (roda no celular):** `https://SEU_USUARIO.github.io/gs-visao-alerta-chuva/web/`
+- **Demonstração online (roda no celular):** `https://zbaldd.github.io/GS-VISAO-COMPUTACIONAL/web/`
 - **MVP (mapa de alertas):** `https://SEU_USUARIO.github.io/gs-bigdata-alerta-chuva/mvp/`
 - **Vídeo da solução funcionando:** `LINK_DO_VIDEO`
 
