@@ -1,4 +1,4 @@
-# Alerta Chuva SP · Visão Computacional
+# Alerta Chuva e Alagamento SP · Visão Computacional
 
 **GS 2026.2 · CitizenTech · Applied Computer Vision, "Enxergando o mundo real"**
 Professores: Arnaldo Viana e Paulo Rodrigues
