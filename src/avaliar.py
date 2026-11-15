@@ -45,7 +45,7 @@ def main(a):
     modelo = YOLO(a.modelo, task="detect")
 
     #1) métricas de detecção no teste
-    m = modelo.val(data=a.dados, split="test", imgsz=a.imgsz, batch=a.batch, plots=True,
+    m = modelo.val(data=a.dados, split=a.split, imgsz=a.imgsz, batch=a.batch, plots=True,
                    project=str(saida), name="val_teste", exist_ok=True, verbose=False)
     por_classe = {}
     for i, c in enumerate(CLASSES):
@@ -54,7 +54,7 @@ def main(a):
             p, r, ap50, ap = m.box.class_result(j)
             por_classe[c] = {"precisao": round(float(p), 4), "recall": round(float(r), 4),
                              "mAP50": round(float(ap50), 4), "mAP50_95": round(float(ap), 4)}
-    metricas = {"split": "test", "mAP50": round(float(m.box.map50), 4), "mAP50_95": round(float(m.box.map), 4),
+    metricas = {"split": a.split, "mAP50": round(float(m.box.map50), 4), "mAP50_95": round(float(m.box.map), 4),
                 "precisao": round(float(m.box.mp), 4), "recall": round(float(m.box.mr), 4),
                 "por_classe": por_classe}
     (saida / "metricas.json").write_text(json.dumps(metricas, indent=2, ensure_ascii=False))
@@ -64,7 +64,7 @@ def main(a):
     #2) nível de risco: previsto pelo modelo x calculado a partir do rótulo humano
     cfg = yaml.safe_load(Path(a.dados).read_text(encoding="utf-8"))
     raiz = Path(cfg.get("path", Path(a.dados).parent))
-    pasta_img = raiz / cfg["test"]
+    pasta_img = raiz / cfg["val" if a.split == "val" else "test"]
     pasta_lbl = pasta_img.parent / "labels"
     imgs = sorted(p for p in pasta_img.iterdir() if p.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp", ".bmp"})
     matriz = np.zeros((4, 4), dtype=int)
@@ -114,4 +114,5 @@ if __name__ == "__main__":
     ap.add_argument("--imgsz", type=int, default=640)
     ap.add_argument("--batch", type=int, default=16)
     ap.add_argument("--saida", default="docs/resultados")
+    ap.add_argument("--split", default="test", choices=["test", "val"])
     main(ap.parse_args())

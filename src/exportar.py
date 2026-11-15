@@ -21,7 +21,7 @@ def main(a):
     shutil.copy2(caminho, destino / "alagamento.onnx")
     meta = {"classes": [modelo.names[i] for i in sorted(modelo.names)], "imgsz": a.imgsz,
             "exportado_em": str(date.today()), "origem": Path(a.modelo).name}
-    met = Path("docs/resultados/metricas.json")
+    met = Path(a.metricas)
     if met.exists():
         meta["metricas_teste"] = json.loads(met.read_text())
     (destino / "meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False))
@@ -34,4 +34,5 @@ if __name__ == "__main__":
     ap.add_argument("--modelo", default="modelos/best.pt")
     ap.add_argument("--imgsz", type=int, default=640)
     ap.add_argument("--web", default="web")
+    ap.add_argument("--metricas", default="docs/resultados/metricas.json")
     main(ap.parse_args())

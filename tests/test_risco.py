@@ -51,3 +51,26 @@ def test_sinonimos():
     assert classe_do_projeto("flooded road") == "area_alagada"
     assert classe_do_projeto("human in flood") == "pessoa_na_agua"
     assert classe_do_projeto("house") is None
+
+
+def test_original_roboflow_agrupa_copias():
+    from preparar_dataset import original_roboflow
+    assert original_roboflow("rua_12_jpg.rf.ab12cd.jpg") == original_roboflow("rua_12_jpg.rf.ff0099.jpg")
+    assert original_roboflow("foto.jpg") == "foto.jpg"
+
+
+def test_resplit_estratifica_classes_raras():
+    from pathlib import Path
+    from preparar_dataset import refazer_split
+    regs = []
+    for i in range(80):
+        presentes = {"pessoa_na_agua"} if i < 16 else {"area_alagada"}
+        for k in range(3):  # 3 cópias aumentadas de cada foto
+            regs.append({"img": Path(f"f{i}_jpg.rf.{k}.jpg"), "presentes": presentes, "grupo": f"d0:f{i}"})
+    out = refazer_split(regs, [0.75, 0.125, 0.125], 42)
+    pessoas_teste = sum(1 for r, s in out if s == "test" and "pessoa_na_agua" in r["presentes"])
+    assert pessoas_teste == 2  # 12,5% de 16
+    grupos = {}
+    for r, s in out:
+        assert grupos.setdefault(r["grupo"], s) == s  # nenhuma foto em dois splits
+    assert all(sum(1 for r, s2 in out if r["grupo"] == g) == 1 for g, s in grupos.items() if s != "train")
