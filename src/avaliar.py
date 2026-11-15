@@ -22,9 +22,9 @@ import yaml
 from ultralytics import YOLO
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from classes import CLASSES  # noqa: E402
-from risco import NIVEIS, Deteccao, nivel_da_imagem  # noqa: E402
-from detectar import extrair  # noqa: E402
+from classes import CLASSES  
+from risco import NIVEIS, Deteccao, nivel_da_imagem  
+from detectar import extrair  
 
 
 def gt_deteccoes(arq_rotulo: Path):
@@ -44,7 +44,7 @@ def main(a):
     saida.mkdir(parents=True, exist_ok=True)
     modelo = YOLO(a.modelo, task="detect")
 
-    # 1) métricas de detecção no teste
+    #1) métricas de detecção no teste
     m = modelo.val(data=a.dados, split="test", imgsz=a.imgsz, batch=a.batch, plots=True,
                    project=str(saida), name="val_teste", exist_ok=True, verbose=False)
     por_classe = {}
@@ -61,7 +61,7 @@ def main(a):
     for f in Path(m.save_dir).glob("*.png"):
         shutil.copy2(f, saida / f.name)
 
-    # 2) nível de risco: previsto pelo modelo x calculado a partir do rótulo humano
+    #2) nível de risco: previsto pelo modelo x calculado a partir do rótulo humano
     cfg = yaml.safe_load(Path(a.dados).read_text(encoding="utf-8"))
     raiz = Path(cfg.get("path", Path(a.dados).parent))
     pasta_img = raiz / cfg["test"]
@@ -78,7 +78,7 @@ def main(a):
         matriz[real, prev] += 1
     total = matriz.sum()
     acerto = int(np.trace(matriz))
-    # "alerta" = nível >= 2 (via intransitável ou pessoa em risco)
+    #"alerta" = nível >= 2 (via intransitável ou pessoa em risco)
     vp = int(matriz[2:, 2:].sum()); fn = int(matriz[2:, :2].sum()); fp = int(matriz[:2, 2:].sum())
     risco = {
         "imagens": int(total),
@@ -93,7 +93,7 @@ def main(a):
     }
     (saida / "nivel_risco.json").write_text(json.dumps(risco, indent=2, ensure_ascii=False))
 
-    # 3) velocidade (descarta as 3 primeiras, que incluem aquecimento)
+    #3) velocidade (descarta as 3 primeiras, que incluem aquecimento)
     t = np.array(tempos[3:] or tempos)
     import platform
     import torch

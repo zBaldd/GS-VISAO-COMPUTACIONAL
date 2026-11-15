@@ -13,10 +13,10 @@ ROTULOS_PT = {
     "pessoa_na_agua": "Pessoa na agua",
 }
 
-# nome original (minúsculo, sem espaços extras) -> classe do projeto
+
 # nomes que não estão aqui são descartados no preparo do dataset
 SINONIMOS = {
-    # área alagada / via com água
+    #área alagada / via com água
     "flooded_area": "area_alagada",
     "flooded area": "area_alagada",
     "flooded_road": "area_alagada",
@@ -28,7 +28,7 @@ SINONIMOS = {
     "water": "area_alagada",
     "water_on_road": "area_alagada",
     "area_alagada": "area_alagada",
-    # veículo ilhado
+    #veículo ilhado
     "flooded_car": "veiculo_ilhado",
     "flooded car": "veiculo_ilhado",
     "drown car": "veiculo_ilhado",
@@ -38,7 +38,7 @@ SINONIMOS = {
     "tier_merged_car": "veiculo_ilhado",
     "flooded_vehicle": "veiculo_ilhado",
     "veiculo_ilhado": "veiculo_ilhado",
-    # pessoa na água
+    #pessoa na água
     "flooded_person": "pessoa_na_agua",
     "flooded person": "pessoa_na_agua",
     "human in flood": "pessoa_na_agua",

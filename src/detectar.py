@@ -23,8 +23,8 @@ import cv2
 from ultralytics import YOLO
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from classes import CLASSES, ROTULOS_PT  # noqa: E402
-from risco import NIVEIS, Deteccao, SuavizadorRisco, nivel_da_imagem  # noqa: E402
+from classes import CLASSES, ROTULOS_PT  
+from risco import NIVEIS, Deteccao, SuavizadorRisco, nivel_da_imagem  
 
 CORES_CLASSE = {"area_alagada": (230, 140, 30), "veiculo_ilhado": (0, 165, 255), "pessoa_na_agua": (40, 40, 220)}
 CORES_NIVEL = {0: (76, 160, 31), 1: (0, 200, 255), 2: (0, 110, 240), 3: (40, 40, 210)}
@@ -47,7 +47,7 @@ def desenhar(frame, dets, nivel, cobertura, fps=None):
     h, w = frame.shape[:2]
     esp = max(2, round(w / 500))
     fonte_cx = max(0.35, w / 2000)
-    for d in sorted(dets, key=lambda d: d.classe != "area_alagada"):  # água por baixo
+    for d in sorted(dets, key=lambda d: d.classe != "area_alagada"):  
         cor = CORES_CLASSE[d.classe]
         p1, p2 = (int(d.x1 * w), int(d.y1 * h)), (int(d.x2 * w), int(d.y2 * h))
         cv2.rectangle(frame, p1, p2, cor, esp)
@@ -57,7 +57,7 @@ def desenhar(frame, dets, nivel, cobertura, fps=None):
         cv2.putText(frame, txt, (p1[0] + 3, p1[1] - 5), cv2.FONT_HERSHEY_SIMPLEX, fonte_cx,
                     (255, 255, 255), 1, cv2.LINE_AA)
     titulo, orientacao = NIVEIS[nivel]
-    escala = max(0.35, w / 1400)            # texto proporcional à largura do vídeo
+    escala = max(0.35, w / 1400)            
     faixa = int(80 * escala) + 12
     cv2.rectangle(frame, (0, 0), (w, faixa), CORES_NIVEL[nivel], -1)
     cv2.putText(frame, f"RISCO: {titulo}  |  agua {cobertura:.0%}" + (f"  |  {fps:.0f} FPS" if fps else ""),

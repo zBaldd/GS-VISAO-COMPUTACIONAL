@@ -124,7 +124,7 @@ def preparar(entradas, saida: Path, negativos=None, semente=42):
                 stats[split]["imagens_sem_rotulo"] += int(not linhas)
 
     rnd = random.Random(semente)
-    # sem pasta de teste nos exports: separa metade da validação para teste
+    #sem pasta de teste nos exports: separa metade da validação para teste
     if not tem_teste:
         imgs_val = sorted((saida / "valid" / "images").iterdir())
         rnd.shuffle(imgs_val)
@@ -143,7 +143,7 @@ def preparar(entradas, saida: Path, negativos=None, semente=42):
                 stats["valid"]["instancias"][c] -= 1
                 stats["test"]["instancias"][c] += 1
 
-    # fotos negativas (ruas secas, sem alagamento): 80/10/10
+    #fotos negativas (ruas secas, sem alagamento): 80/10/10
     if negativos:
         fotos = sorted(p for p in Path(negativos).rglob("*") if p.suffix.lower() in EXT_IMG)
         rnd.shuffle(fotos)
