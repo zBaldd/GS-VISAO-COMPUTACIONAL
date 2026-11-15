@@ -71,8 +71,8 @@ tests/                         testes da regra de risco e um gerador de dados si
 ## Como reproduzir
 
 ### 1. Treinar (Google Colab, ~30 min com GPU T4)
-1. Crie uma conta gratuita no [Roboflow](https://roboflow.com) e copie a sua *Private API Key* (Settings → API Keys).
-2. Abra `notebooks/treino_colab.ipynb` no Colab, mude o ambiente para **GPU T4** e, em **🔑 Secrets**, crie `ROBOFLOW_API_KEY`.
+1. Crie uma conta gratuita no [Roboflow](https://roboflow.com) e copie a sua Private API KEYS (Settings -> API Keys).
+2. Abra `notebooks/treino_colab.ipynb` no Colab, mude o ambiente para **GPU T4** e, em **Secrets**, crie `ROBOFLOW_API_KEY`.
 3. Na célula 2, troque `REPO_URL` pela URL deste repositório. **Executar tudo.**
 4. No fim, o notebook baixa `resultados_visao.zip`. Descompacte na raiz do repositório (cria `modelos/`, `docs/resultados/` e `web/model/`).
 
