@@ -1,0 +1,6 @@
+{
+  "hardware": "Tesla T4",
+  "imgsz": 640,
+  "ms_por_imagem_mediana": 14.3,
+  "fps_aprox": 70.2
+}

@@ -1,0 +1,127 @@
+{
+  "classes": [
+    "area_alagada",
+    "veiculo_ilhado",
+    "pessoa_na_agua"
+  ],
+  "datasets": [
+    {
+      "nome": "flooding-object-detection-opiei",
+      "mapa_proprio": {},
+      "max_imagens": null,
+      "sem_agua": false
+    },
+    {
+      "nome": "flood-detection-aicourse",
+      "mapa_proprio": {},
+      "max_imagens": null,
+      "sem_agua": false
+    },
+    {
+      "nome": "flood-nfc4z",
+      "mapa_proprio": {},
+      "max_imagens": null,
+      "sem_agua": false
+    },
+    {
+      "nome": "flooded-objects",
+      "mapa_proprio": {},
+      "max_imagens": null,
+      "sem_agua": true
+    },
+    {
+      "nome": "flood-cka5z",
+      "mapa_proprio": {
+        "car": "veiculo_ilhado",
+        "person": "pessoa_na_agua",
+        "house": null
+      },
+      "max_imagens": 1500,
+      "sem_agua": true
+    },
+    {
+      "nome": "flood-object-detection-2olqp",
+      "mapa_proprio": {
+        "person": "pessoa_na_agua"
+      },
+      "max_imagens": null,
+      "sem_agua": true
+    },
+    {
+      "nome": "flood-person-detection-uu8x0",
+      "mapa_proprio": {},
+      "max_imagens": null,
+      "sem_agua": true
+    }
+  ],
+  "split": "refeito por foto original, estratificado",
+  "proporcoes": [
+    0.75,
+    0.125,
+    0.125
+  ],
+  "origem_das_classes": {
+    "area_alagada": [
+      "flood-detection-aicourse:flooded_road",
+      "flood-nfc4z:flood",
+      "flooding-object-detection-opiei:flooded_area"
+    ],
+    "veiculo_ilhado": [
+      "flood-cka5z:car",
+      "flood-detection-aicourse:flooded_car",
+      "flood-object-detection-2olqp:flooded_car",
+      "flooded-objects:flooded car",
+      "flooding-object-detection-opiei:flooded_car"
+    ],
+    "pessoa_na_agua": [
+      "flood-cka5z:person",
+      "flood-object-detection-2olqp:person",
+      "flood-object-detection-2olqp:person_in_help",
+      "flood-person-detection-uu8x0:person_in_water",
+      "flooded-objects:human in flood",
+      "flooding-object-detection-opiei:flooded_person"
+    ]
+  },
+  "classes_descartadas": [
+    "flood-cka5z:house",
+    "flood-detection-aicourse:flooded_electric_distribution_pole",
+    "flood-detection-aicourse:flooded_fallen_trees",
+    "flood-detection-aicourse:flooded_house",
+    "flood-object-detection-2olqp:flooded_building",
+    "flood-person-detection-uu8x0:person_normal",
+    "flood-person-detection-uu8x0:person_on_boat",
+    "flooded-objects:This dataset was exported via roboflow.com on November 5- 2024 at 9-19 AM GMT",
+    "flooding-object-detection-opiei:flooded_building"
+  ],
+  "duplicadas_removidas": 476,
+  "imagens_para_pseudo_rotulo": 3668,
+  "splits": {
+    "train": {
+      "imagens": 3944,
+      "imagens_sem_rotulo": 267,
+      "instancias": {
+        "area_alagada": 1064,
+        "veiculo_ilhado": 2503,
+        "pessoa_na_agua": 5979
+      }
+    },
+    "valid": {
+      "imagens": 531,
+      "imagens_sem_rotulo": 27,
+      "instancias": {
+        "area_alagada": 125,
+        "veiculo_ilhado": 409,
+        "pessoa_na_agua": 930
+      }
+    },
+    "test": {
+      "imagens": 530,
+      "imagens_sem_rotulo": 27,
+      "instancias": {
+        "area_alagada": 112,
+        "veiculo_ilhado": 356,
+        "pessoa_na_agua": 865
+      }
+    }
+  }
+}

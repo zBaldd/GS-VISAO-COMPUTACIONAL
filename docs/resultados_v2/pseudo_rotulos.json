@@ -1,0 +1,22 @@
+{
+  "modelo": "v1_best.pt",
+  "classe": "area_alagada",
+  "conf_minima": 0.5,
+  "por_split": {
+    "train": {
+      "imagens": 2845,
+      "imagens_com_pseudo": 1978,
+      "caixas": 2007
+    },
+    "valid": {
+      "imagens": 408,
+      "imagens_com_pseudo": 286,
+      "caixas": 289
+    },
+    "test": {
+      "imagens": 415,
+      "imagens_com_pseudo": 278,
+      "caixas": 278
+    }
+  }
+}

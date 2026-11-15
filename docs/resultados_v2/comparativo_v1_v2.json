@@ -1,0 +1,39 @@
+{
+  "validacao": {
+    "v1 (YOLO26n)": {
+      "mAP50": 0.571,
+      "mAP50_95": 0.4002,
+      "AP50_agua": 0.9693,
+      "AP50_veiculo": 0.5367,
+      "AP50_pessoa": 0.207,
+      "ms": 4.06
+    },
+    "v2 (yolo26n)": {
+      "mAP50": 0.7239,
+      "mAP50_95": 0.4672,
+      "AP50_agua": 0.9035,
+      "AP50_veiculo": 0.6095,
+      "AP50_pessoa": 0.6589,
+      "ms": 3.79
+    }
+  },
+  "escolhido": "v2 (yolo26n)",
+  "hiperparametros": {
+    "data": "/content/dados/alagamento/data.yaml",
+    "epochs": 70,
+    "imgsz": 640,
+    "batch": 16,
+    "patience": 15,
+    "seed": 42,
+    "deterministic": true,
+    "cos_lr": true,
+    "close_mosaic": 10,
+    "hsv_h": 0.015,
+    "hsv_s": 0.6,
+    "hsv_v": 0.5,
+    "fliplr": 0.5,
+    "flipud": 0.0,
+    "scale": 0.5,
+    "mosaic": 1.0
+  }
+}

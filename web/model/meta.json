@@ -5,32 +5,32 @@
     "pessoa_na_agua"
   ],
   "imgsz": 640,
-  "exportado_em": "2026-11-14",
+  "exportado_em": "2026-11-15",
   "origem": "best.pt",
   "metricas_teste": {
     "split": "test",
-    "mAP50": 0.5137,
-    "mAP50_95": 0.3191,
-    "precisao": 0.5162,
-    "recall": 0.573,
+    "mAP50": 0.6905,
+    "mAP50_95": 0.4605,
+    "precisao": 0.6734,
+    "recall": 0.7091,
     "por_classe": {
       "area_alagada": {
-        "precisao": 0.8164,
-        "recall": 0.7857,
-        "mAP50": 0.8943,
-        "mAP50_95": 0.5294
+        "precisao": 0.8022,
+        "recall": 0.9487,
+        "mAP50": 0.9185,
+        "mAP50_95": 0.7408
       },
       "veiculo_ilhado": {
-        "precisao": 0.5714,
-        "recall": 0.6,
-        "mAP50": 0.5632,
-        "mAP50_95": 0.3691
+        "precisao": 0.5828,
+        "recall": 0.5056,
+        "mAP50": 0.4927,
+        "mAP50_95": 0.2798
       },
       "pessoa_na_agua": {
-        "precisao": 0.1608,
-        "recall": 0.3333,
-        "mAP50": 0.0838,
-        "mAP50_95": 0.0586
+        "precisao": 0.6351,
+        "recall": 0.6728,
+        "mAP50": 0.6603,
+        "mAP50_95": 0.3609
       }
     }
   }

@@ -11,5 +11,6 @@ __pycache__/
 # pesos: versionamos só o best.pt (~5 MB) e o ONNX da web
 modelos/*
 !modelos/best.pt
+!modelos/v1_best.pt
 docs/resultados/val_teste/
 .pytest_cache/
