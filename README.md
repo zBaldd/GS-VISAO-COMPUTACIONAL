@@ -6,18 +6,17 @@ Professores: Arnaldo Viana e Paulo Rodrigues
 Um detector YOLO, treinado pela equipe, que reconhece **rua alagada**, **veículo ilhado** e **pessoa na água** em fotos e em vídeo ao vivo. Cada detecção vira um **nível de risco** (Sem alagamento, Atenção, Alto, Crítico) que alimenta os relatos de alagamento do MVP Alerta Chuva SP.
 
 - **Demonstração online (roda no celular):** `https://zbaldd.github.io/GS-VISAO-COMPUTACIONAL/web/`
-- **MVP (mapa de alertas):** `https://SEU_USUARIO.github.io/gs-bigdata-alerta-chuva/mvp/`
+- **MVP (mapa de alertas):** `https://zbaldd.github.io/GS-BIGDATA-2026/mvp/`
 - **Vídeo da solução funcionando:** `LINK_DO_VIDEO`
 
 ## Integrantes
 
 | Nome completo | RM |
 |---|---|
-| _preencher_ | _preencher_ |
-| _preencher_ | _preencher_ |
-| _preencher_ | _preencher_ |
-| _preencher_ | _preencher_ |
-| _preencher_ | _preencher_ |
+| Arthur Baldissera Claumann Marcos | RM550219 |
+| Victor Kenzo Toma| RM551649 |
+| Ricardo Ramos Vergani | 	RM550166 |
+| Pedro Barros | RM97937 |
 
 ## Ficha Técnica do MVP
 
