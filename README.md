@@ -1,6 +1,6 @@
 # Alerta Chuva e Alagamento SP · Visão Computacional
 
-**GS 2026.2 · CitizenTech · Applied Computer Vision
+GS 2026.2 · CitizenTech · Applied Computer Vision
 
 Um detector YOLO, treinado pela equipe, que reconhece **rua alagada**, **veículo ilhado** e **pessoa na água** em fotos e em vídeo ao vivo. Cada detecção vira um **nível de risco** (Sem alagamento, Atenção, Alto, Crítico) que alimenta os relatos de alagamento do MVP Alerta Chuva SP.
 
