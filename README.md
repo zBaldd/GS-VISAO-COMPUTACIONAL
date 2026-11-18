@@ -6,7 +6,7 @@ Um detector YOLO, treinado pela equipe, que reconhece **rua alagada**, **veícul
 
 - **Demonstração online (roda no celular):** `https://zbaldd.github.io/GS-VISAO-COMPUTACIONAL/web/`
 - **MVP (mapa de alertas):** `https://zbaldd.github.io/GS-BIGDATA-2026/mvp/`
-- **Vídeo da solução funcionando:** `LINK_DO_VIDEO`
+- **Vídeo da solução funcionando:** https://youtu.be/jrc8yx2wIiI?feature=shared
 
 ## Integrantes
 
